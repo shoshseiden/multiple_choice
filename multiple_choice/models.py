@@ -18,6 +18,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
+    question = models.ForeignKey(Question)
     correct_answer = models.CharField(max_length=25)
     incorrect_answer_1 = models.CharField(max_length=25)
     incorrect_answer_2 = models.CharField(max_length=25)
