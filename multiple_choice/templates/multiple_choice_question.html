@@ -1,0 +1,11 @@
+{% extends "multiple_choice_quiz.html" %}
+
+
+{% block question %}
+  {% if question %}
+    {{question.question_number}}
+    {{question.question_text}}
+  {% else %}
+    No questions available at this time.
+  {% endif %}
+{% endblock %}

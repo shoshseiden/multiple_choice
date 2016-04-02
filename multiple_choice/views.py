@@ -12,3 +12,10 @@ class QuizView(generic.TemplateView):
 
     model = Quiz
     template_name = "multiple_choice_quiz.html"
+
+
+def question(request, question_id):
+    template_name = "multiple_choice_question.html"
+    active_question = get_object_or_404(Question, pk=question_id)
+    ctx = {'question': active_question}
+    return render(request, template_name, ctx)
