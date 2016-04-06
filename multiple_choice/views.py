@@ -19,3 +19,20 @@ def question(request, question_id):
     active_question = get_object_or_404(Question, pk=question_id)
     ctx = {'question': active_question}
     return render(request, template_name, ctx)
+
+
+def multiple_a(request):
+    return render(request, "multiple_a.html")
+
+'''
+def multiple_a(request):
+    return render(request, "multiple_b.html")
+
+
+def multiple_a(request):
+    return render(request, "multiple_c.html")
+
+
+def multiple_a(request):
+    return render(request, "multiple_d.html")
+'''
