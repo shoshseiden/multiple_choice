@@ -14,7 +14,7 @@ class Question(models.Model):
     question_text = models.TextField(null=True)
 
     def __str__(self):
-        return self.question_number
+        return self.question_text
 
 
 class Answer(models.Model):
