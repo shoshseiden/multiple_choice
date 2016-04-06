@@ -5,6 +5,9 @@
   {% if question %}
     {{question.question_number}}
     {{question.question_text}}
+
+    {%block answer%}
+    {% endblock %}
   {% else %}
     No questions available at this time.
   {% endif %}
