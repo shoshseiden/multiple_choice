@@ -12,17 +12,10 @@ class Question(models.Model):
     quiz = models.ForeignKey(Quiz)
     question_number = models.IntegerField()
     question_text = models.TextField(null=True)
-
-    def __str__(self):
-        return self.question_text
-
-
-class Answer(models.Model):
-    question = models.ForeignKey(Question)
     correct_answer = models.CharField(max_length=25)
     incorrect_answer_1 = models.CharField(max_length=25)
     incorrect_answer_2 = models.CharField(max_length=25)
     incorrect_answer_3 = models.CharField(max_length=25)
 
     def __str__(self):
-        return self.correct_answer
+        return self.question_text

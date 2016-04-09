@@ -16,5 +16,5 @@ urlpatterns = [
     #url(r"^quiz/(?P<question_id>[0-9]+)/m_B/$", views.multiple_a, name="multiple_b"),
     #url(r"^quiz/(?P<question_id>[0-9]+)/m_C/$", views.multiple_a, name="multiple_c"),
     #url(r"^quiz/(?P<question_id>[0-9]+)/m_D/$", views.multiple_a, name="multiple_d"),
-    url(r"^answer/$", views.multiple_a, name="multiple_a"),
+    url(r"^answer/$", views.multiple_a, name="multiple_a")
 ]
