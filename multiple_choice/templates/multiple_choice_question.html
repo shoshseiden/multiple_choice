@@ -3,8 +3,7 @@
 
 {% block question %}
   {% if question %}
-    {{question.question_number}}
-    {{question.question_text}}
+    {{question.question_number}}. {{question.question_text}}
 
     {%block answer%}
     {% endblock %}

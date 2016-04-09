@@ -8,34 +8,24 @@ from django.views import generic
 from .models import Quiz, Question
 
 
-class QuizView(generic.TemplateView):
-
-    model = Quiz
+def quiz(request, quiz_id):
     template_name = "multiple_choice_quiz.html"
-
-
-def question(request, question_id):
-    template_name = "multiple_choice_question.html"
-    active_question = get_object_or_404(Question, pk=question_id)
-    ctx = {'question': active_question}
+    active_quiz = get_object_or_404(Quiz, pk=quiz_id)
+    ctx = {'quiz': active_quiz}
     return render(request, template_name, ctx)
 
+
+def question(request, quiz_id, question_id):
+    p = get_object_or_404(Quiz, pk=quiz_id)
+    try:
+        active_question = p.question_set.get(pk=question_id)
+    except Question.DoesNotExist:
+        raise Http404("Question does not exist")
+    else:
+        return render(request, "multiple_choice_question.html", {'question': active_question})
 
 def multiple_a(request, question_id):
     template_name = "multiple_a.html"
     active_answer = get_object_or_404(Question, pk=question_id)
     ctx = {'answer': active_answer}
     return render(request, template, ctx)
-
-'''
-def multiple_a(request):
-    return render(request, "multiple_b.html")
-
-
-def multiple_a(request):
-    return render(request, "multiple_c.html")
-
-
-def multiple_a(request):
-    return render(request, "multiple_d.html")
-'''
