@@ -2,12 +2,17 @@ from django.contrib import admin
 from .models import Quiz, Question, Answer
 
 
+class AnswerInline(admin.TabularInline):
+    model = Answer
+    extra = 1
+
 class QuizAdmin(admin.ModelAdmin):
     fields = ["quiz_name"]
 
 
 class QuestionAdmin(admin.ModelAdmin):
     fields = ["quiz", "question_number", "question_text"]
+    inlines = [AnswerInline]
 
 
 class AnswerAdmin(admin.ModelAdmin):
