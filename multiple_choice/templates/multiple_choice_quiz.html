@@ -1,11 +1,1 @@
-{% extends "site_base.html" %}
 
-{% block body %}
-{%if quiz%}
-  <h1>{{quiz.quiz_name}}</h1>
-  {% block question %}
-  {% endblock %}
-{% else %}
-  <h2>No quiz available.</h2>
-{% endif %}
-{% endblock %}

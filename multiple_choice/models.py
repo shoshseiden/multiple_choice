@@ -7,7 +7,6 @@ class Quiz(models.Model):
     def __str__(self):
         return self.quiz_name
 
-
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz)
     question_number = models.IntegerField()
