@@ -1,0 +1,10 @@
+{% extends "multiple_choice_quiz.html" %}
+
+{% block question %}
+  {{question.question_number}}. {{question.question_text}}
+
+  <li>{{question.correct_answer}}</li>
+  <li>{{question.incorrect_answer_1}}</li>
+  <li>{{question.incorrect_answer_2}}</li>
+  <li>{{question.incorrect_answer_3}}</li>
+{% endblock %}
