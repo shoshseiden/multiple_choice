@@ -1,6 +1,6 @@
 {% extends "site_base.html" %}
 {% block body %}
-  <h1>{{quiz.quiz_name}}</h1>
+  <h1>{{question.quiz.quiz_name}}</h1>
 
   {% if question %}
   {{question.question_number}}. {{question.question_text}}
