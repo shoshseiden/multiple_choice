@@ -3,14 +3,45 @@
   <h1>{{question.quiz.quiz_name}}</h1>
 
   {% if question %}
-  {{question.question_number}}. {{question.question_text}}
+    {% if question.correct_answer_letter == 'a' %}
+      {{question.question_number}}. {{question.question_text}}
 
-  <form action="">
-    <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}<br>
-    <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
-    <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
-    <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
-  </form>
+      <form action="">
+        <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
+      </form>
+    {% elif question.correct_answer_letter == 'b' %}
+      {{question.question_number}}. {{question.question_text}}
+
+      <form action="">
+        <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
+        <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
+      </form>
+    {% elif question.correct_answer_letter == 'c' %}
+      {{question.question_number}}. {{question.question_text}}
+
+      <form action="">
+        <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
+        <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
+      </form>
+    {% elif question.correct_answer_letter == 'd' %}
+      {{question.question_number}}. {{question.question_text}}
+
+      <form action="">
+        <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
+        <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}<br>
+        <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}
+      </form>
+    {% else %}
+      Invalid answer.
+    {% endif %}
   {% else %}
     No questions available.
   {% endif %}

@@ -15,7 +15,8 @@ class QuizAdmin(admin.ModelAdmin):
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
         ("Questions", {"fields": ["quiz", "question_number", "question_text"]}),
-        ("Answers", {"fields": ["correct_answer", "incorrect_answer_1", "incorrect_answer_2",
+        ("Answers", {"fields": ["correct_answer_letter",
+         "correct_answer", "incorrect_answer_1", "incorrect_answer_2",
          "incorrect_answer_3"]}),
     ]
 
