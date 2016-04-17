@@ -3,7 +3,7 @@
   <h1>{{question.quiz.quiz_name}}</h1>
 
   {% if question %}
-    {% if question.correct_answer_letter == 'a' %}
+    {% if question.correct_answer_choice == 'a' %}
       {{question.question_number}}. {{question.question_text}}
 
       <form action="">
@@ -12,7 +12,7 @@
         <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
         <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
       </form>
-    {% elif question.correct_answer_letter == 'b' %}
+    {% elif question.correct_answer_choice == 'b' %}
       {{question.question_number}}. {{question.question_text}}
 
       <form action="">
@@ -21,7 +21,7 @@
         <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
         <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
       </form>
-    {% elif question.correct_answer_letter == 'c' %}
+    {% elif question.correct_answer_choice == 'c' %}
       {{question.question_number}}. {{question.question_text}}
 
       <form action="">
@@ -30,7 +30,7 @@
         <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}<br>
         <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
       </form>
-    {% elif question.correct_answer_letter == 'd' %}
+    {% elif question.correct_answer_choice == 'd' %}
       {{question.question_number}}. {{question.question_text}}
 
       <form action="">

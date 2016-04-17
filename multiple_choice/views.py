@@ -5,7 +5,7 @@ from django.template.loader import get_template
 from django.template import RequestContext, loader
 from django.views import generic
 
-from .models import Quiz
+from .models import Quiz, Question
 
 
 def quiz(request, quiz_id, question_id):
