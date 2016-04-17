@@ -40,7 +40,9 @@
         <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}
       </form>
     {% else %}
-      Invalid answer.
+      {{question.question_number}}. {{question.question_text}}
+
+      <p>Invalid answer. Please enter, a, b, c, or d for the correct answer choice.</p>
     {% endif %}
   {% else %}
     No questions available.
