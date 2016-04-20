@@ -8,7 +8,7 @@ from django.views import generic
 from .models import Quiz, Question
 
 
-def quiz(request, quiz_id, question_id):
+def quiz_view(request, quiz_id, question_id):
     p = get_object_or_404(Quiz, pk=quiz_id)
     try:
         active_question = p.question_set.get(pk=question_id)
