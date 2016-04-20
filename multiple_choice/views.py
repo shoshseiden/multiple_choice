@@ -15,4 +15,4 @@ def quiz(request, quiz_id, question_id):
     except Question.DoesNotExist:
         raise Http404("Question does not exist")
     else:
-        return render(request, "multiple_choice_quiz.html", {'question': active_question})
+        return render(request, "multiple_choice_quiz.html", {'question': active_question, 'quiz': p})
