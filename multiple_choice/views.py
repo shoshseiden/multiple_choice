@@ -9,6 +9,7 @@ from .models import Quiz, Question
 
 
 def quiz_view(request, quiz_id, question_id):
+    print request.method, request.POST
     p = get_object_or_404(Quiz, pk=quiz_id)
     try:
         active_question = p.question_set.get(pk=question_id)

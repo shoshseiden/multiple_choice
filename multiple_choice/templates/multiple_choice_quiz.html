@@ -7,38 +7,46 @@
     {% if question.correct_answer_choice == 'a' %}
       {{question.question_number}}. {{question.question_text}}
 
-      <form action="">
-        <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="radio" name="answer" value="{{question.correct_answer|lower}}">{{question.correct_answer}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_1|lower}}">{{question.incorrect_answer_1}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}
+        <input type="submit" name="submit">
       </form>
     {% elif question.correct_answer_choice == 'b' %}
       {{question.question_number}}. {{question.question_text}}
 
-      <form action="">
-        <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
-        <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="radio" name="answer" value="{{question.incorrect_answer_1|lower}}">{{question.incorrect_answer_1}}<br>
+        <input type="radio" name="answer" value="{{question.correct_answer|lower}}">{{question.correct_answer}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}
+        <input type="submit" name="submit">
       </form>
     {% elif question.correct_answer_choice == 'c' %}
       {{question.question_number}}. {{question.question_text}}
 
-      <form action="">
-        <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
-        <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="radio" name="answer" value="{{question.incorrect_answer_1|lower}}">{{question.incorrect_answer_1}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
+        <input type="radio" name="answer" value="{{question.correct_answer|lower}}">{{question.correct_answer}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}
+        <input type="submit" name="submit">
       </form>
     {% elif question.correct_answer_choice == 'd' %}
       {{question.question_number}}. {{question.question_text}}
 
-      <form action="">
-        <input type="radio" name="answer" value="incorrect_answer_1">{{question.incorrect_answer_1}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_2">{{question.incorrect_answer_2}}<br>
-        <input type="radio" name="answer" value="incorrect_answer_3">{{question.incorrect_answer_3}}<br>
-        <input type="radio" name="answer" value="correct_answer">{{question.correct_answer}}
+      <form action="" method="post">
+        {% csrf_token %}
+        <input type="radio" name="answer" value="{{question.incorrect_answer_1|lower}}">{{question.incorrect_answer_1}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
+        <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}<br>
+        <input type="radio" name="answer" value="{{question.correct_answer|lower}}">{{question.correct_answer}}
+        <input type="submit" name="submit">
       </form>
     {% else %}
       {{question.question_number}}. {{question.question_text}}
@@ -46,7 +54,6 @@
       <p>Invalid answer. Please enter, a, b, c, or d for the correct answer choice.</p>
     {% endif %}
 
-    {# Submit button will be placed here #}
     <a href="{% url 'quiz' quiz.pk question.pk|add:'1' %}">Next Question</a>
   {% else %}
     No questions available.
