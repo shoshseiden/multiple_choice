@@ -45,8 +45,10 @@
 
       <p>Invalid answer. Please enter, a, b, c, or d for the correct answer choice.</p>
     {% endif %}
+
+    {# Submit button will be placed here #}
     <a href="{% url 'quiz' quiz.pk question.pk|add:'1' %}">Next Question</a>
-    {% else %}
+  {% else %}
     No questions available.
   {% endif %}
 {% endblock %}
