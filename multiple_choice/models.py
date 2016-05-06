@@ -17,6 +17,7 @@ class Question(models.Model):
     incorrect_answer_1 = models.CharField(max_length=25)
     incorrect_answer_2 = models.CharField(max_length=25)
     incorrect_answer_3 = models.CharField(max_length=25)
+    question_point_value = models.IntegerField()
 
     def __str__(self):
         return self.question_text
