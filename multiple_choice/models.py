@@ -26,7 +26,7 @@ class Question(models.Model):
     def calculate_total_points(self):
         total_points = 0
 
-        point_value = Question.question_point_value
+        point_value = question_point_value
         total_points += point_value
 
         return self.total_points
