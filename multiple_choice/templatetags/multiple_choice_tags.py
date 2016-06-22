@@ -6,3 +6,8 @@ from django.core.urlresolvers import reverse
 from ..models import Question
 
 register = template.Library()
+
+
+@register.assignment_tag
+def question_tags(arg):
+    pass
