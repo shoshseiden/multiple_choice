@@ -13,7 +13,7 @@
         <input type="radio" name="answer" value="{{question.incorrect_answer_1|lower}}">{{question.incorrect_answer_1}}<br>
         <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
         <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}
-        <input type="submit" name="submit">
+        <p><input type="submit" name="submit"></p>
       </form>
     {% elif question.correct_answer_choice == 'b' %}
       {{question.question_number}}. {{question.question_text}}
@@ -24,7 +24,7 @@
         <input type="radio" name="answer" value="{{question.correct_answer|lower}}">{{question.correct_answer}}<br>
         <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
         <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}
-        <input type="submit" name="submit">
+        <p><input type="submit" name="submit"></p>
       </form>
     {% elif question.correct_answer_choice == 'c' %}
       {{question.question_number}}. {{question.question_text}}
@@ -35,7 +35,7 @@
         <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
         <input type="radio" name="answer" value="{{question.correct_answer|lower}}">{{question.correct_answer}}<br>
         <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}
-        <input type="submit" name="submit">
+        <p><input type="submit" name="submit"></p>
       </form>
     {% elif question.correct_answer_choice == 'd' %}
       {{question.question_number}}. {{question.question_text}}
@@ -46,7 +46,7 @@
         <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
         <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}<br>
         <input type="radio" name="answer" value="{{question.correct_answer|lower}}">{{question.correct_answer}}
-        <input type="submit" name="submit">
+        <p><input type="submit" name="submit"></p>
       </form>
     {% else %}
       {{question.question_number}}. {{question.question_text}}
