@@ -17,3 +17,7 @@ def quiz_view(request, quiz_id, question_id):
         raise Http404("Question does not exist")
     else:
         return render(request, "multiple_choice_quiz.html", {'question': active_question, 'quiz': p})
+
+def result_view(request, quiz_id):
+    p = get_object_or_404(Quiz, pk=quiz_id)
+    return render(request, "results.html", {'quiz': p})

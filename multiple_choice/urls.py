@@ -8,7 +8,8 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    url(r"^admin/", include(admin.site.urls)),
     url(r"^$", TemplateView.as_view(template_name="homepage.html"), name="home"),
     url(r"^quiz/(?P<quiz_id>[0-9]+)/question/(?P<question_id>[0-9]+)/$", views.quiz_view, name="quiz"),
+    url(r"^quiz/(?P<quiz_id>[0-9]+)/results/$", views.result_view, name="result"),
 ]
