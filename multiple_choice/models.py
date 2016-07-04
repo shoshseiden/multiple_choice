@@ -22,6 +22,13 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+    def number_of_questions(total_number_of_questions):
+        for question_number in total_number_of_questions:
+            total_number_of_questions = question_number + 1
+
+        return total_number_of_questions
+
+"""
     #Copied from calculations.py
     def calculate_total_points(self):
         total_points = 0
@@ -44,3 +51,4 @@ class Question(models.Model):
         percentage = 100 * (total_score / total_points)
 
         return self.percentage
+"""
