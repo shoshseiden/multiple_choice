@@ -55,8 +55,12 @@
       <p>Invalid answer. Please enter, a, b, c, or d for the correct answer choice.</p>
     {% endif %}
 
+    {% if question.question_number != final_question %}
     <a href="{% url 'quiz' quiz.pk question.pk|add:'1' %}">Next Question</a>
+    {% else %}
     <a href="{% url 'result' quiz.pk %}">Results</a>
+    {% endif %}
+
   {% else %}
     No questions available.
   {% endif %}
