@@ -1,4 +1,5 @@
 {% extends "site_base.html" %}
+{% load multiple_choice_tags %}
 
 {% block body %}
   <h1>{{question.quiz.quiz_name}}</h1>
@@ -53,9 +54,11 @@
 
       <p>Invalid answer. Please enter, a, b, c, or d for the correct answer choice.</p>
     {% endif %}
-
-    <a href="{% url 'quiz' quiz.pk question.pk|add:'1' %}">Next Question</a>
-    <a href="{% url 'result' quiz.pk %}">Results</a>
+      {% if final_question != question.question_number %}
+        <a href="{% url 'quiz' quiz.pk question.pk|add:'1' %}">Next Question</a>
+      {% else %}
+        <a href="{% url 'result' quiz.pk %}">Results</a>
+      {% endif %}
   {% else %}
     No questions available.
   {% endif %}
