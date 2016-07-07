@@ -22,6 +22,6 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
-    def get_final_question(self):
-        final_question = self.objects.last()
-        return final_question
+    @property
+    def final_question(self):
+        return self.objects.last()
