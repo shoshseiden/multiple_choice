@@ -21,7 +21,3 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question_text
-
-    @property
-    def final_question(self):
-        return self.objects.last()
