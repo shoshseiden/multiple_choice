@@ -55,8 +55,8 @@
       <p>Invalid answer. Please enter, a, b, c, or d for the correct answer choice.</p>
     {% endif %}
 
-    <a href="{% url 'quiz' quiz.pk question.pk|add:'1' %}">Next Question</a>
     <a href="{% url 'quiz' quiz.pk question.pk|add:'-1' %}">Previous Question</a>
+    <a href="{% url 'quiz' quiz.pk question.pk|add:'1' %}">Next Question</a>
     <a href="{% url 'result' quiz.pk %}">Results</a>
 
   {% else %}
