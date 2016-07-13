@@ -56,11 +56,8 @@
     {% endif %}
 
     <a href="{% url 'quiz' quiz.pk question.pk|add:'-1' %}">Previous Question</a>
-    {% if question.id != get_last_question %}
     <a href="{% url 'quiz' quiz.pk question.pk|add:'1' %}">Next Question</a>
-    {% else %}
     <a href="{% url 'result' quiz.pk %}">Results</a>
-    {% endif %}
 
   {% else %}
     No questions available.
