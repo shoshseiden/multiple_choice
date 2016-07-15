@@ -24,5 +24,6 @@ class Question(models.Model):
         return self.question_text
 
     @property
-    def last_question(self):
-        return self.objects.all().aggregate(Max("question_number"))
+    def get_max_question(self, max_question):
+        max_question = self.objects.all().aggregate(Max("question_number"))
+        return max_question
