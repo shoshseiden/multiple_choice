@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Max
 
 
 class Quiz(models.Model):
@@ -22,7 +23,7 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
-    @property 
+    @property
     def get_last_question(self):
-        last_question = self.objects.last()
+        last_question = self.objects.all().aggregate(Max("question_number"))
         return last_question
