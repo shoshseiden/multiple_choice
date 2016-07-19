@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Max
+# from django.db.models import Max
 
 
 class Quiz(models.Model):
@@ -28,13 +28,14 @@ class Question(models.Model):
         max_question = self.objects.all().aggregate(Max("question_number"))
         return max_question
 """
-    def get_sequencing(self):
-        total_question_numbers = self.objects.all().question_number
-        current_question_number = self.objects.question_number
-        question_number_list = []
 
-        for current_question_number in total_question_numbers:
-            if current_question_number:
-                return question_number_list.append(current_question_number)
+    def get_question_sequencing(self):
+        all_questions = self.objects.all()
+        question_list = []
+
+        for current_question in all_questions:
+            if current_question:
+                question_list.append(current_question)
+                return question_list
             else:
                 return None 
