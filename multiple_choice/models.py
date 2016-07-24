@@ -1,7 +1,24 @@
 from django.db import models
+from django.contrib.auth.models import User
 # from django.db.models import Max
 
 
+# User models
+class Student(User):
+    class Meta:
+        proxy = True
+        app_label = "auth"
+        verbose_name = "Student Account"
+        verbose_name_plural = "Student Accounts"
+
+"""
+class Instructor(User):
+    class Meta:
+        proxy = True
+        app_label = "auth"
+        verbose_name = "Instructor Account"
+        verbose_name_plural = "Instructor Accounts"
+"""
 class Quiz(models.Model):
     quiz_name = models.CharField(max_length=100)
 
