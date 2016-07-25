@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 from django.db.models import Q
-from .models import Quiz, Question, Student #Instructor (insert comma, before uncommenting)
+from .models import Quiz, Question, Student, Instructor
 
 
 class InstructorAdmin(UserAdmin):
@@ -41,7 +41,7 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.unregister(User)
-admin.site.register(User, InstructorAdmin)
+admin.site.register(Instructor, InstructorAdmin)
 admin.site.register(Student, StudentAdmin)
 admin.site.register(Quiz, QuizAdmin)
 admin.site.register(Question, QuestionAdmin)
