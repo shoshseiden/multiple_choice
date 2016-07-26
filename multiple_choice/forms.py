@@ -18,7 +18,7 @@ class StudentLoginForm(forms.Form):
 
 class InstructorLoginForm(forms.Form):
 
-    username = froms.CharField()
+    username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
 
     def clean(self):
