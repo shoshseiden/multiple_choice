@@ -41,11 +41,10 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
-        
+
     @property
-    def get_max_question(self, max_question):
-        max_question = self.objects.all().aggregate(Max("question_number"))
-        return max_question
+    def max_question(self):
+        return self.objects.all().aggregate(Max("question_number"))
 
     def get_question_sequencing(self):
         all_questions = self.objects.all()

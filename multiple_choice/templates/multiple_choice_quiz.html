@@ -56,7 +56,7 @@
     {% endif %}
 
     <a href="{% url 'quiz' quiz.pk question.question_number|add:'-1' %}">Previous Question</a>
-    {% if quesion.question_number != question.get_max_question %}
+    {% if question.question_number != question.max_question %}
     <a href="{% url 'quiz' quiz.pk question.question_number|add:'1' %}">Next Question</a>
     {% else %}
     <a href="{% url 'result' quiz.pk %}">Results</a>
