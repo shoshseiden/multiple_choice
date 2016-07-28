@@ -56,9 +56,12 @@
     {% endif %}
 
     <a href="{% url 'quiz' quiz.pk question.question_number|add:'-1' %}">Previous Question</a>
+    {% if get_question_sequencing != "none" %}
     <a href="{% url 'quiz' quiz.pk question.question_number|add:'1' %}">Next Question</a>
+    {% else %}
     <a href="{% url 'result' quiz.pk %}">Results</a>
-
+    {% endif %}
+    
   {% else %}
     No questions available.
   {% endif %}
