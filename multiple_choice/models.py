@@ -40,19 +40,3 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question_text
-
-
-    @property
-    def max_question(self):
-        return self.objects.all().aggregate(Max("question_number"))
-
-    def get_question_sequencing(self):
-        all_questions = self.objects.all()
-        question_list = []
-
-        for current_question in all_questions:
-            if current_question:
-                question_list.append(current_question)
-                return question_list
-            else:
-                return None
