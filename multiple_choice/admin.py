@@ -1,22 +1,6 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.models import User
 from django.db.models import Q
-from .models import Quiz, Question, Student, Instructor
-
-
-class InstructorAdmin(UserAdmin):
-    def queryset(self, request):
-        qs = super(UserAdmin, self).queryset(request)
-        qs = qs.filter(Q(is_staff=True)|Q(is_superuser=True))
-        return qs
-
-
-class StudentAdmin(InstructorAdmin):
-    def queryset(self, request):
-        qs = super(UserAdmin, self).queryset(request)
-        qs = qs.exclude(Q(is_staff=True)|Q(is_superuser=True))
-        return qs
+from .models import Quiz, Question
 
 
 class QuestionInline(admin.TabularInline):
@@ -39,9 +23,5 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
 
 
-
-admin.site.unregister(User)
-admin.site.register(Instructor, InstructorAdmin)
-admin.site.register(Student, StudentAdmin)
 admin.site.register(Quiz, QuizAdmin)
 admin.site.register(Question, QuestionAdmin)
