@@ -10,6 +10,7 @@ from .models import Quiz, Question
 
 
 def quiz_view(request, quiz_id, question_id):
+
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     question = get_object_or_404(quiz.question_set.all(), pk=question_id)
     if request.method == "POST":
@@ -27,11 +28,13 @@ def quiz_view(request, quiz_id, question_id):
 
 
 def result_view(request, quiz_id):
+
     p = get_object_or_404(Quiz, pk=quiz_id)
     return render(request, "results.html", {'quiz': p})
 
 def login_view(request):
-    if request.method=="POST":
+
+    if request.method == "POST":
         student_form = StudentLoginForm(request.POST)
         instructor_form = InstructorLoginForm(request.POST)
         if student_form.is_valid():
