@@ -1,0 +1,84 @@
+[
+{
+  "model": "multiple_choice.quiz",
+  "pk": 1,
+  "fields": {
+    "quiz_name": "My Quiz"
+  }
+},
+{
+  "model": "multiple_choice.question",
+  "pk": 1,
+  "fields": {
+    "quiz": 1,
+    "question_number": 1,
+    "question_text": "What is my name?",
+    "correct_answer_choice": "a",
+    "correct_answer": "Shosh",
+    "incorrect_answer_1": "Josh",
+    "incorrect_answer_2": "Joseph",
+    "incorrect_answer_3": "Shawn",
+    "question_point_value": 1
+  }
+},
+{
+  "model": "multiple_choice.question",
+  "pk": 2,
+  "fields": {
+    "quiz": 1,
+    "question_number": 2,
+    "question_text": "Where did I go to high school?",
+    "correct_answer_choice": "b",
+    "correct_answer": "Overland",
+    "incorrect_answer_1": "Smoky Hill",
+    "incorrect_answer_2": "Eaglecrest",
+    "incorrect_answer_3": "Hinkley",
+    "question_point_value": 1
+  }
+},
+{
+  "model": "multiple_choice.question",
+  "pk": 3,
+  "fields": {
+    "quiz": 1,
+    "question_number": 3,
+    "question_text": "Other than programming, what is another potential career possibility I'm interested in?",
+    "correct_answer_choice": "c",
+    "correct_answer": "Music Production",
+    "incorrect_answer_1": "Underwater Basket Weaving",
+    "incorrect_answer_2": "Dishwashing",
+    "incorrect_answer_3": "Football",
+    "question_point_value": 1
+  }
+},
+{
+  "model": "multiple_choice.question",
+  "pk": 4,
+  "fields": {
+    "quiz": 1,
+    "question_number": 4,
+    "question_text": "Where did I grow up?",
+    "correct_answer_choice": "d",
+    "correct_answer": "Aurora",
+    "incorrect_answer_1": "Kansas City",
+    "incorrect_answer_2": "Fort Worth",
+    "incorrect_answer_3": "Baltimore",
+    "question_point_value": 1
+  }
+},
+{
+  "model": "multiple_choice.question",
+  "pk": 5,
+  "fields": {
+    "quiz": 1,
+    "question_number": 5,
+    "question_text": "Where do I want to travel?",
+    "correct_answer_choice": "d",
+    "correct_answer": "All of the above",
+    "incorrect_answer_1": "Florida",
+    "incorrect_answer_2": "Brazil",
+    "incorrect_answer_3": "Israel",
+    "question_point_value": 1
+  }
+}
+]

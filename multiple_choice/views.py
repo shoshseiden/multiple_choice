@@ -19,7 +19,7 @@ def quiz_view(request, quiz_id, question_id):
         # @@@ Above line commented out due to prevention of redirecting to
         # the next question. Will keep just in case it needs to be used later,
         # or until further notice.
-        
+
         next_question = question.next_question
         if next_question is None:
             return redirect("result", quiz_id=quiz.id)
