@@ -27,6 +27,7 @@ class Question(models.Model):
 
     @property
     def next_question(self):
+
         qs = self.quiz.question_set.filter(
             question_number__gt=self.question_number
         ).order_by("question_number")[:1]
@@ -34,3 +35,10 @@ class Question(models.Model):
             return qs.get()
         except Question.DoesNotExist:
             return None
+
+    def get_total_score(self):
+
+        point_value = self.question_point_value
+        quiz_total = 0
+        quiz_total += point_value
+        return quiz_total
