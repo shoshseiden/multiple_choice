@@ -42,3 +42,11 @@ class Question(models.Model):
         quiz_total = 0
         quiz_total += point_value
         return quiz_total
+
+    def get_student_total(self, quiz_total):
+
+        student_score = 0
+        student_total += student_score
+        student_percentage = student_total / quiz_total
+        return student_percentage
+        
