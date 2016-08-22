@@ -35,7 +35,7 @@ class Question(models.Model):
             return qs.get()
         except Question.DoesNotExist:
             return None
-
+    """
     def get_total_score(self):
 
         point_value = self.question_point_value
@@ -49,4 +49,4 @@ class Question(models.Model):
         student_total += student_score
         student_percentage = student_total / quiz_total
         return student_percentage
-        
+    """    
