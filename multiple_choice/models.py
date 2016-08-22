@@ -41,6 +41,8 @@ class Question(models.Model):
         answer_list = [correct_answer, incorrect_answer_1, incorrect_answer_2,
             incorrect_answer_3]
 
+        return answer_list
+
     """
     def get_total_score(self):
 
