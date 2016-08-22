@@ -38,8 +38,8 @@ class Question(models.Model):
     @property
     def get_answer_list(self):
 
-        answer_list = [correct_answer, incorrect_answer_1, incorrect_answer_2,
-            incorrect_answer_3]
+        answer_list = [self.correct_answer, self.incorrect_answer_1, self.incorrect_answer_2,
+            self.incorrect_answer_3]
 
         return answer_list
 
