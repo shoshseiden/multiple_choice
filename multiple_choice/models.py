@@ -34,6 +34,13 @@ class Question(models.Model):
             return qs.get()
         except Question.DoesNotExist:
             return None
+
+    @property
+    def get_answer_list(self):
+
+        answer_list = [correct_answer, incorrect_answer_1, incorrect_answer_2,
+            incorrect_answer_3]
+
     """
     def get_total_score(self):
 
