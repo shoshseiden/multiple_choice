@@ -9,13 +9,13 @@
 
       <form action="" method="post">
         {% csrf_token %}
-        <input type="radio" name="answer" value="{{question.correct_answer|lower}}">{{question.correct_answer}}<br>
-        <input type="radio" name="answer" value="{{question.incorrect_answer_1|lower}}">{{question.incorrect_answer_1}}<br>
-        <input type="radio" name="answer" value="{{question.incorrect_answer_2|lower}}">{{question.incorrect_answer_2}}<br>
-        <input type="radio" name="answer" value="{{question.incorrect_answer_3|lower}}">{{question.incorrect_answer_3}}
+
+        {% for i in question.get_answer_list %}
+        <li><input type="radio" name="answer" value="{{ i|lower }}">{{ i }}</li>
+        {% endfor %}
         <p><input type="submit" name="submit"></p>
       </form>
-      
+
   {% else %}
     No questions available.
   {% endif %}
