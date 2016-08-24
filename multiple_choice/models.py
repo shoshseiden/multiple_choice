@@ -40,7 +40,6 @@ class Question(models.Model):
 
         answer_list = [self.correct_answer, self.incorrect_answer_1, self.incorrect_answer_2,
             self.incorrect_answer_3]
-
         return answer_list
 
     """
