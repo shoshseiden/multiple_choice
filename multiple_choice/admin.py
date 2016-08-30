@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db.models import Q
-from .models import Quiz, Question
+from .models import Quiz, Question, Answer 
 
 
 class QuestionInline(admin.TabularInline):
