@@ -42,9 +42,9 @@ class Answer(models.Model):
     def __str__(self):
         return self.answer_text
 
-        # @property
-        # def get_answer_list(self):
-        #
-        #     answer_list = [self.correct_answer, self.incorrect_answer_1, self.incorrect_answer_2,
-        #         self.incorrect_answer_3]
-        #     return answer_list
+        @property
+        def get_answer_list(self):
+
+            answer_list = []
+            answer_list.append(self.answer_text)
+            return answer_list

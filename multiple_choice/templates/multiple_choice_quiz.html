@@ -10,8 +10,8 @@
       <form action="" method="post">
         {% csrf_token %}
 
-        {% for i in question.get_answer_list %}
-        <li><input type="radio" name="answer" value="{{ i|lower }}">{{ i }}</li>
+        {% for answer in question.answer_set.all %}
+        <li><input type="radio" name="answer" value="{{ answer.answer_text|lower }}">{{ answer.answer_text }}</li>
         {% endfor %}
         <p><input type="submit" name="submit"></p>
       </form>

@@ -27,7 +27,7 @@ def quiz_view(request, quiz_id, question_id):
             return redirect("quiz", quiz_id=quiz.id, question_id=next_question.id)
     ctx = {
         "question": question,
-        "quiz": quiz
+        "quiz": quiz,
     }
     return render(request, "multiple_choice_quiz.html", ctx)
 
