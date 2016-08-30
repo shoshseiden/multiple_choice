@@ -12,12 +12,8 @@
   "fields": {
     "quiz": 1,
     "question_number": 1,
-    "question_text": "What is my name?",
-    "correct_answer_choice": "a",
+    "question_text": "What is my first name?",
     "correct_answer": "Shosh",
-    "incorrect_answer_1": "Josh",
-    "incorrect_answer_2": "Joseph",
-    "incorrect_answer_3": "Shawn",
     "question_point_value": 1
   }
 },
@@ -27,12 +23,8 @@
   "fields": {
     "quiz": 1,
     "question_number": 2,
-    "question_text": "Where did I go to high school?",
-    "correct_answer_choice": "b",
+    "question_text": "Where did I attend high school?",
     "correct_answer": "Overland",
-    "incorrect_answer_1": "Smoky Hill",
-    "incorrect_answer_2": "Eaglecrest",
-    "incorrect_answer_3": "Hinkley",
     "question_point_value": 1
   }
 },
@@ -42,12 +34,8 @@
   "fields": {
     "quiz": 1,
     "question_number": 3,
-    "question_text": "Other than programming, what is another potential career possibility I'm interested in?",
-    "correct_answer_choice": "c",
-    "correct_answer": "Music Production",
-    "incorrect_answer_1": "Underwater Basket Weaving",
-    "incorrect_answer_2": "Dishwashing",
-    "incorrect_answer_3": "Football",
+    "question_text": "Other than programming, what is another career I have in mind?",
+    "correct_answer": "Music",
     "question_point_value": 1
   }
 },
@@ -57,28 +45,137 @@
   "fields": {
     "quiz": 1,
     "question_number": 4,
-    "question_text": "Where did I grow up?",
-    "correct_answer_choice": "d",
-    "correct_answer": "Aurora",
-    "incorrect_answer_1": "Kansas City",
-    "incorrect_answer_2": "Fort Worth",
-    "incorrect_answer_3": "Baltimore",
-    "question_point_value": 1
+    "question_text": "Where do I want to travel?",
+    "correct_answer": "All of the above",
+    "question_point_value": 2
   }
 },
 {
-  "model": "multiple_choice.question",
+  "model": "multiple_choice.answer",
+  "pk": 1,
+  "fields": {
+    "question": 1,
+    "answer_text": "Shosh"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 2,
+  "fields": {
+    "question": 1,
+    "answer_text": "Josh"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 3,
+  "fields": {
+    "question": 1,
+    "answer_text": "Joseph"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 4,
+  "fields": {
+    "question": 1,
+    "answer_text": "Shawn"
+  }
+},
+{
+  "model": "multiple_choice.answer",
   "pk": 5,
   "fields": {
-    "quiz": 1,
-    "question_number": 5,
-    "question_text": "Where do I want to travel?",
-    "correct_answer_choice": "d",
-    "correct_answer": "All of the above",
-    "incorrect_answer_1": "Florida",
-    "incorrect_answer_2": "Brazil",
-    "incorrect_answer_3": "Israel",
-    "question_point_value": 1
+    "question": 2,
+    "answer_text": "Eaglecrest"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 6,
+  "fields": {
+    "question": 2,
+    "answer_text": "Smoky Hill"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 7,
+  "fields": {
+    "question": 2,
+    "answer_text": "Overland"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 8,
+  "fields": {
+    "question": 3,
+    "answer_text": "Music"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 9,
+  "fields": {
+    "question": 3,
+    "answer_text": "Football"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 10,
+  "fields": {
+    "question": 3,
+    "answer_text": "Retail"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 11,
+  "fields": {
+    "question": 3,
+    "answer_text": "Restaurant"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 12,
+  "fields": {
+    "question": 4,
+    "answer_text": "Japan"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 13,
+  "fields": {
+    "question": 4,
+    "answer_text": "Brazil"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 14,
+  "fields": {
+    "question": 4,
+    "answer_text": "Israel"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 15,
+  "fields": {
+    "question": 4,
+    "answer_text": "Hawaii"
+  }
+},
+{
+  "model": "multiple_choice.answer",
+  "pk": 16,
+  "fields": {
+    "question": 4,
+    "answer_text": "All of the above"
   }
 }
 ]
