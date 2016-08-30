@@ -35,16 +35,16 @@ class Question(models.Model):
         except Question.DoesNotExist:
             return None
 
-    @property
-    def get_answer_list(self):
-
-        answer_list = [self.correct_answer, self.incorrect_answer_1, self.incorrect_answer_2,
-            self.incorrect_answer_3]
-        return answer_list
-
 class Answer(models.Model):
     question = models.ForeignKey(Question)
-    answer_input = models.CharField(max_length=25)
+    answer_text = models.CharField(max_length=25)
 
     def __str__(self):
-        return self.answer_input
+        return self.answer_text
+
+        # @property
+        # def get_answer_list(self):
+        #
+        #     answer_list = [self.correct_answer, self.incorrect_answer_1, self.incorrect_answer_2,
+        #         self.incorrect_answer_3]
+        #     return answer_list
