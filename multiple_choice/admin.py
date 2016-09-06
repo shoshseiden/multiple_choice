@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.db.models import Q
-from .models import Quiz, Question, Answer 
+from .models import Quiz, Question, Answer
 
 
 class QuestionInline(admin.TabularInline):
@@ -18,13 +18,12 @@ class QuizAdmin(admin.ModelAdmin):
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    fields =["quiz", "question_number", "question_point_value", "question_text",
-        "correct_answer"]
+    fields =["quiz", "question_number", "question_point_value", "question_text"]
     inlines = [AnswerInline]
 
 
 class AnswerAdmin(admin.ModelAdmin):
-    fields = ["question", "answer_text"]
+    fields = ["question", "answer_text", "correct_answer"]
 
 
 admin.site.register(Quiz, QuizAdmin)
