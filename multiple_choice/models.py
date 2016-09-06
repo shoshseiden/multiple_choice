@@ -15,7 +15,7 @@ class Question(models.Model):
     quiz = models.ForeignKey(Quiz)
     question_number = models.IntegerField()
     question_text = models.TextField(null=True)
-    #correct_answer = models.CharField(max_length=25)
+    correct_answer = models.CharField(max_length=25)
     # incorrect_answer_1 = models.CharField(max_length=25)
     # incorrect_answer_2 = models.CharField(max_length=25)
     # incorrect_answer_3 = models.CharField(max_length=25)
@@ -38,7 +38,6 @@ class Question(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey(Question)
     answer_text = models.CharField(max_length=25)
-    correct_answer = models.CharField(max_length=25)
 
     def __str__(self):
         return self.answer_text

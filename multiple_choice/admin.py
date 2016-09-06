@@ -18,12 +18,13 @@ class QuizAdmin(admin.ModelAdmin):
 
 
 class QuestionAdmin(admin.ModelAdmin):
-    fields =["quiz", "question_number", "question_point_value", "question_text"]
+    fields =["quiz", "question_number", "question_point_value", "question_text",
+        "correct_answer"]
     inlines = [AnswerInline]
 
 
 class AnswerAdmin(admin.ModelAdmin):
-    fields = ["question", "answer_text", "correct_answer"]
+    fields = ["question", "answer_text"]
 
 
 admin.site.register(Quiz, QuizAdmin)
