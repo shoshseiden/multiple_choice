@@ -37,8 +37,7 @@ class Question(models.Model):
 
     @property
     def get_total_quiz_score(self):
-        correct_answer = self.correct_answer
-        question_point_value = self.question_point_value
+        point_value = self.question_point_value
         quiz_total = 0
 
         quiz_total += question_point_value
