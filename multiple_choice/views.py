@@ -35,4 +35,5 @@ def quiz_view(request, quiz_id, question_id):
 def result_view(request, quiz_id):
 
     quiz = get_object_or_404(Quiz, pk=quiz_id)
-    return render(request, "results.html", {'quiz': quiz})
+    ctx = {"quiz": quiz,}
+    return render(request, "results.html", ctx)
