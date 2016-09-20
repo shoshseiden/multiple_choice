@@ -37,7 +37,9 @@ class Question(models.Model):
 
     @property
     def get_total_quiz_score(self):
-        point_value = self.question_point_value
+
+        correct_answer = self.correct_answer
+        question_point_value = self.question_point_value
         quiz_total = 0
 
         quiz_total += question_point_value
@@ -45,6 +47,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
+
     question = models.ForeignKey(Question)
     answer_text = models.CharField(max_length=25)
 
