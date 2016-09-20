@@ -36,17 +36,3 @@ def result_view(request, quiz_id):
 
     quiz = get_object_or_404(Quiz, pk=quiz_id)
     return render(request, "results.html", {'quiz': quiz})
-
-def login_view(request):
-
-    if request.method == "POST":
-        student_form = StudentLoginForm(request.POST)
-        instructor_form = InstructorLoginForm(request.POST)
-        if student_form.is_valid():
-            return redirect("home")
-        if instructor_form.is_valid():
-            return redirect("home")
-    else:
-        student_form = StudentLoginForm()
-        instructor_form = InstructorLoginForm()
-    return render(request, "login.html", {"student_form": student_form, "instructor_form": instructor_form})
