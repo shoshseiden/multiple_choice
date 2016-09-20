@@ -5,7 +5,8 @@
   <h1>{{question.quiz.quiz_name}}</h1>
 
   {% if question %}
-      {{question.question_number}}. {{question.question_text}}
+      <h3>{{question.question_number}}. {{question.question_text}}</h3>
+      <p>Question point value: {{question.question_point_value}}</p>
 
       <form action="" method="post">
         {% csrf_token %}
