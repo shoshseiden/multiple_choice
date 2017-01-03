@@ -18,12 +18,9 @@ class Question(models.Model):
     question_number = models.IntegerField()
     question_text = models.TextField(null=True)
     correct_answer = models.CharField(max_length=25)
-    # incorrect_answer_1 = models.CharField(max_length=25)
-    # incorrect_answer_2 = models.CharField(max_length=25)
-    # incorrect_answer_3 = models.CharField(max_length=25)
     question_point_value = models.IntegerField()
 
-    #@@@ Set up correct answer so that it will get added into the score. 
+    #@@@ Set up correct answer so that it will get added into the score.
 
     def total_quiz_score(self):
         total_score = map(lambda: x.answer_text, self.answer_set.all())
