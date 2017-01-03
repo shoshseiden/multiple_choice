@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+import numpy as np
+
 
 class Quiz(models.Model):
 
@@ -35,15 +37,15 @@ class Question(models.Model):
         except Question.DoesNotExist:
             return None
 
-    @property
-    def get_total_quiz_score(self):
-
-        correct_answer = self.correct_answer
-        question_point_value = self.question_point_value
-        quiz_total = 0
-
-        quiz_total += question_point_value
-        return quiz_total
+    # @property
+    # def get_total_quiz_score(self):
+    #
+    #     correct_answer = self.correct_answer
+    #     question_point_value = self.question_point_value
+    #     quiz_total = 0
+    #
+    #     quiz_total += question_point_value
+    #     return quiz_total
 
 
 class Answer(models.Model):
