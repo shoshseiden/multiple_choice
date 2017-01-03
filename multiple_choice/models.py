@@ -52,7 +52,6 @@ class Answer(models.Model):
 
     question = models.ForeignKey(Question)
     answer_text = models.CharField(max_length=25)
-    quiz_total = models.IntegerField()
 
     def __str__(self):
         return self.answer_text
